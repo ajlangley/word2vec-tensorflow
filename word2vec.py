@@ -118,5 +118,8 @@ class Word2Vec:
         return most_similar[:, 1:]
 
     def save(self, log_dir, step):
-        filepath = './training-logs/' + log_dir
+        filepath = os.path.join('training-logs', log_dir)
+        if not os.path.exists(filepath):
+            os.mkdir('training-logs')
+            
         self.saver.save(self.training_session, os.path.join(filepath, 'embeddings.ckpt'), step)

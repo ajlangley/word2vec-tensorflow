@@ -14,9 +14,11 @@ input_dir = args.input_dir
 output_dir = args.output_dir
 context_radius = args.context_radius
 
-filepath = './training-sets/' + output_dir
+filepath = 'training-sets/' + output_dir
 
-if not os.path.exists('./training-sets/' + output_dir):
+if not os.path.exists('/training-sets/'):
+    os.makedirs('/training-sets')
+if not os.path.exists(filepath):
     os.makedirs(filepath)
 else:
     selection = input('The directory /training-sets/{}/ already exists. Would you '
