@@ -4,3 +4,4 @@ training-sets/
 training-logs/
 
 .DS_Store
+.idea/
